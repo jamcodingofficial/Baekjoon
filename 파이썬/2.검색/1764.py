@@ -1,5 +1,5 @@
 '''
- * Author : JC!!
+ * Author : JC
  * https://www.acmicpc.net/problem/1764
 '''
 
