@@ -15,7 +15,7 @@ def binarySearch(arr, length, target) :
         else :
             low = mid + 1
     return 0
-
+ 
 a, b = map(int, input().split())
 a1 = []
 b1 = []
