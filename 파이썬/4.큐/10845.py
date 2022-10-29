@@ -16,7 +16,7 @@ for i in range(n) :
         if len(queue) == 0 :
             print(-1)
         else :
-            print(queue[-1])
+            print(queue[0])
             queue.pop(0)
     elif a[0] == 'size' : 
         print(len(queue))
