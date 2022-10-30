@@ -1,3 +1,7 @@
+'''
+ * Author : JC
+ * https://www.acmicpc.net/problem/20301
+'''
 
 n, k, m = map(int, input().split())
 l = [i for i in range(1, n+1)]
