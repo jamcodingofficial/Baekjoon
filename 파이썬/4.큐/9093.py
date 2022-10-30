@@ -10,6 +10,6 @@ for i in range(t) :
     l = []
     for j in s : 
         l.append(''.join(reversed(j)))
-    # print(*l) -> [Line 14 ~ 15] 코드를 이렇게 한 줄로 작성해도 됨.
+    # print(*l) -> [Line 14 ~ 15] 코드를 이렇게 한 줄로 작성해도 된다.
     for i in l :
         print(i, end = ' ')
