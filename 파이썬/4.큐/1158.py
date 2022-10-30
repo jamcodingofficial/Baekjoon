@@ -5,7 +5,7 @@
 
 n, k = map(int, input().split())
 idx = k-1
-l = [i for i in range(1, n+1)]
+l = [i for i in range(1, n+1)] 
 res = []
 
 while l > 0 :
