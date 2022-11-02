@@ -6,34 +6,43 @@
 #include <iostream>
 
 using namespace std;
-
-int arr[10000];
-int n, k, cnt;
+ 
+int A[10000];
+int key, check, cnt, j;
 
 int main(){
-  
-    cin >> n >> k;
+    int n, k;
+    cin >> n >> k; 
     
     for(int i=0; i<n; i++){
-        cin >> arr[i];
+        cin >> A[i];
     }
-   
-    for(int i=n-1; i>=0; i--){
-        for(int j=0; j<i; j++){
-            if(arr[j] > arr[j+1]){
-                int tmp = arr[j];
-                arr[j] = arr[j+1];
-                arr[j+1] = tmp;
-                cnt++;
-                if(cnt==k){
-                    cout << arr[j] << " " << arr[j+1];
-                    return 0;
-                }
+
+    for(int i=1; i<n; i++){ 
+        key = A[i]; 
+        check = 1;
+        for(j=i-1; j>=0 && A[j] > key; j--){
+            check = 0;
+            A[j+1] = A[j];
+            cnt++;
+            if(cnt == k){
+                cout << A[j+1];
+                return 0;
             }
         }
+        if(check == 1){
+            continue;
+        }
+        A[j+1] = key;
+        cnt++;
+        if(cnt == k){
+            cout << A[j+1];
+            return 0;
+        }
     }
-    
+
     cout << -1;
-    
+
     return 0;
 }
+

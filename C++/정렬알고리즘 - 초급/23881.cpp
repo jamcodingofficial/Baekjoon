@@ -8,27 +8,31 @@
 using namespace std;
 
 int arr[10000];
-int n, k, cnt;
+int n, k, key, cnt;
 
 int main(){
-  
+    
     cin >> n >> k;
     
     for(int i=0; i<n; i++){
         cin >> arr[i];
     }
-   
+    
     for(int i=n-1; i>=0; i--){
-        for(int j=0; j<i; j++){
-            if(arr[j] > arr[j+1]){
-                int tmp = arr[j];
-                arr[j] = arr[j+1];
-                arr[j+1] = tmp;
-                cnt++;
-                if(cnt==k){
-                    cout << arr[j] << " " << arr[j+1];
-                    return 0;
-                }
+        key = i;
+        for(int j=i-1; j>=0; j--){
+            if(arr[key] < arr[j]){
+                key = j;
+            }
+        }
+        if(key != i){
+            int tmp = arr[key];
+            arr[key] = arr[i];
+            arr[i] = tmp;
+            cnt++;
+            if(cnt == k){
+                cout << arr[key] <<  " " << arr[i];
+                return 0;
             }
         }
     }
