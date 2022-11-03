@@ -11,16 +11,16 @@ int arr[1000];
 int n;
 
 int main(){
-  
-    cin >> n;
-    for(int i=0; i<n; i++){
-        cin >> arr[i];
-    }
-    // 5 2 3 4 1
+    aaaaa
+    // cin >> n;
+    // for(int i=0; i<n; i++){
+    //     cin >> arr[i];
+    // }
+    // // 5 2 3 4 1
 
-    for(int i=0; i<n-1; i++){
+    // for(int i=0; i<n-1; i++){
         
-    }
+    // }
     
     return 0;
 }
