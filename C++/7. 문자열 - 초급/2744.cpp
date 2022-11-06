@@ -1,6 +1,6 @@
 /*
  * Author : JC
- * https://www.acmicpc.net/problem/10821
+ * https://www.acmicpc.net/problem/2744
 */
 
 #include <iostream>
@@ -9,18 +9,18 @@
 using namespace std;
 
 string s;
-int cnt;
 
 int main(){
     
     cin >> s;
     int len = s.length();
     for(int i=0; i<len; i++){
-        if(s[i] == ','){
-            cnt++;
+        if(s[i] >= 'a' && s[i] <= 'z'){
+            cout << (char)(s[i] - 32);
+        }else{
+            cout << (char)(s[i] + 32);
         }
     }
-    cout << cnt + 1;
 
     return 0;
 }

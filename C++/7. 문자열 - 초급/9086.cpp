@@ -3,12 +3,6 @@
  * https://www.acmicpc.net/problem/9086
 */
 
-
-/*
- * Author : JC
- * https://www.acmicpc.net/problem/9086
-*/
-
 #include <iostream>
 #include <string>
 
