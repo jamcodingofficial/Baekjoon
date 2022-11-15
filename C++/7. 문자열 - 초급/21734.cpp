@@ -12,14 +12,21 @@ string s;
 
 int main(){
 
-    cin >> s; // s : smupc
-    int len = s.length();
+    cin >> s;
 
+    int len = s.length();
     for(int i=0; i<len; i++){
         int n = s[i];
-        cout << n << endl;
-        return 0;
-    }    
+        int sum = 0;
+        while(n > 0){
+            sum += n % 10;
+            n /= 10;
+        }
+        for(int j=0; j<sum; j++){
+            cout << s[i];
+        }
+        cout << "\n";
+    }
 
     return 0;
 }
