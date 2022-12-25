@@ -10,42 +10,43 @@
 using namespace std;
 
 string str;
+int tmp = 1, res;
 stack<char> s;
-int tmp = 1, cnt;
 
 int main() {
-  
-    cin >> str;
-    int len = str.size();
 
-    for(int i=0;i<len;i++){
+    cin >> str;
+    int len = str.length();
+    
+    for(int i=0; i<len; i++){
         if(str[i] == '('){
             tmp *= 2;
-            s.push(str[i]);
-        }else if(str[i] == '['){
-            tmp *= 3;
-            s.push(str[i]);
+            s.push('(');
         }else if(str[i] == ')'){
-            if(s.empty() || s.top() != '('){
-                cout << "0";
+            if(s.empty() || s.top() == '['){
+                cout << 0;
                 return 0;
-            }
-            if(str[i-1] == '('){
-                s.pop();
-                cnt += tmp;
-                tmp /= 2;
             }else{
-                s.pop();
-                tmp /= 2;
+                if(str[i-1] == '('){
+                    s.pop();
+                    res += tmp;
+                    tmp /= 2;
+                }else{
+                    s.pop();
+                    tmp /= 2;
+                }
             }
+        }
+        if(str[i] == '['){
+            tmp *= 3;
+            s.push('[');
         }else if(str[i] == ']'){
-            if(s.empty() || s.top() != '['){
-                cout << "0";
+            if(s.empty() || s.top() == '('){
+                cout << 0;
                 return 0;
-            }
-            if(str[i-1] == '['){
+            }else if(str[i-1] == '['){
                 s.pop();
-                cnt += tmp;
+                res += tmp;
                 tmp /= 3;
             }else{
                 s.pop();
@@ -57,7 +58,7 @@ int main() {
     if(!s.empty()){
         cout << 0;
     }else{
-        cout << cnt;
+        cout << res;
     }
     
     return 0;
