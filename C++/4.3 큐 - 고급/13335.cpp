@@ -41,6 +41,5 @@ int main(){
     
     ans += w;
     cout << ans;
-    
     return 0;
 }
