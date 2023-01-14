@@ -32,7 +32,6 @@ int main(){
         sum += v1[i] * v2[i];
     }
     cout << sum;
-    cout << "hello world";
- 
+    
     return 0;
 }
