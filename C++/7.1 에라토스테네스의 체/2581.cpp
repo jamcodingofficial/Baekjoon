@@ -19,7 +19,8 @@ int main(){
     fill(check, check+10001, true);
     check[1] = false;
     
-    for(int i=2; i<=sqrt(n); i++){
+    int s = sqrt(n);
+    for(int i=2; i<=s; i++){
         if(check[i]){
             for(int j=i+i; j<=n; j+=i){
                 check[j] = false;
