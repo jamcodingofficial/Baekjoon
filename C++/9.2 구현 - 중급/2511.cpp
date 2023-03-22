@@ -7,8 +7,7 @@
 
 using namespace std;
 
-int arr[10];
-int brr[10];
+int arr[10], brr[10];
 int a, b;
 char winner;
 
