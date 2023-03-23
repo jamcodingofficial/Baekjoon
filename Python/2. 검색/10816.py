@@ -3,31 +3,38 @@
  * https://www.acmicpc.net/problem/10816
 '''
 
-a = int(input())
-b = list(map(int,input().split()))
-b.sort() 
-avg = sum(b) // a 
-ans = 0
+def down(arr, length, target) :
+    low = 0
+    high = length - 1
+    while low < high :
+        mid = (low + high) // 2
+        if arr[mid] >= target :
+            high = mid
+        else :
+            low = mid + 1
+    return high
 
-for i in b :
-    ans = ans + abs(avg - i)
+def up(arr, length, target) :
+    low = 0
+    high = length - 1
+    while low < high :
+        mid = (low + high) // 2
+        if arr[mid] > target :
+            high = mid
+        else :
+            low = mid + 1
+    return high
 
-low = 0
-high = a - 1
-mid = 0
-idx = 0
+n = int(input())
+a = list(map(int, input().split()))
+m = int(input())
+b = list(map(int, input().split()))
 
-while low <= high :
-    mid = (low + high) // 2
-    res = 0
-    for i in b :
-        res += abs(b[mid]-i)
-    
-    if ans >= res :
-        ans = res
-        idx = mid
-        high = mid - 1
-    else :
-        low = mid + 1
+a.sort()
 
-print(b[idx])
+for i in range(m) :
+    r1 = down(a, n, b[i])
+    r2 = up(a, n, b[i])
+    if r2 == n-1 and a[n-1] == b[i] :
+        r2+=1
+    print(r2 - r1, end = ' ')
