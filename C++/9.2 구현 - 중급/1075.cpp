@@ -26,4 +26,4 @@ int main(){
     printf("%02d", r);
     
     return 0;
-}
+} 
