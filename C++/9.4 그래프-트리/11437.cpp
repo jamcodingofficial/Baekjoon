@@ -1,3 +1,8 @@
+/*
+ * Author : JC
+ * https://www.acmicpc.net/problem/11437
+*/
+
 #include <iostream>
 #include <vector>
 #include <algorithm>

@@ -1,3 +1,8 @@
+/*
+ * Author : JC
+ * https://www.acmicpc.net/problem/2606
+*/
+
 #include <iostream>
 
 using namespace std;

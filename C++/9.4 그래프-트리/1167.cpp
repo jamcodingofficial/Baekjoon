@@ -1,3 +1,8 @@
+/*
+ * Author : JC
+ * https://www.acmicpc.net/problem/1067
+*/
+
 #include <iostream>
 #include <vector>
 #include <memory.h>

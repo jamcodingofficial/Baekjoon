@@ -1,3 +1,8 @@
+/*
+ * Author : JC
+ * https://www.acmicpc.net/problem/1260
+*/
+
 #include <iostream>
 #include <string.h>
 #include <queue>
