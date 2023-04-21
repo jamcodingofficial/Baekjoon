@@ -7,23 +7,21 @@
 
 using namespace std;
 
-int arr[45];
+int map[46];
 
-int fibo(int x){ 
-    if(x==1 || x== 2){
-        return 1;
+int fibonacci(int x){ 
+    if(x == 1 || x == 2) return 1;
+    if(map[x] != 0){
+        return map[x];
     }
-    if(arr[x] != 0){
-        return arr[x];
-    }
-    arr[x] = fibo(x-1)  + fibo(x-2);
-    return arr[x];
+    map[x] = fibonacci(x-2) + fibonacci(x-1);
+    return map[x];
 }
 
 int main(){
     int n;
     cin >> n;
-    cout << fibo(n);
-
+    cout << fibonacci(n);
+    
     return 0;
 }
