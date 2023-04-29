@@ -1,4 +1,7 @@
-
+/*
+ * Author : JC
+ * https://www.acmicpc.net/problem/3085
+*/
 
 #include <iostream>
 #include <vector>
@@ -22,14 +25,14 @@ int main(){
     for(int i=0; i<n; i++){
         int color = vp[i].second;
         int l = 100000, r = 100000;
-        // color와 같은 색깔의 점이 왼쪽에 있는지 확인하는 반복문
+        // color와 같은 색깔의 점이 왼쪽에 있는지 체크
         for(int j=i-1; j>=0; j--){ 
             if(vp[j].second == color){
                 l = vp[i].first-vp[j].first;
                 break;
             }
         }
-        // color와 같은 색깔의 점이 오른쪽에 있는지 확인하는 반복문
+        // color와 같은 색깔의 점이 오른쪽에 있는지 체크
         for(int j=i+1; j<n; j++){ 
             if(vp[j].second == color){
                 r = vp[j].first-vp[i].first;
