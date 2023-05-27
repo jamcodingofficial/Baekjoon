@@ -1,4 +1,3 @@
-
 /*
  * Author : JC
  * https://www.acmicpc.net/problem/16948
@@ -8,19 +7,20 @@
 #include <queue>
 
 using namespace std;
+typedef pair<int, int> pii;
 
 int map[200][200];
 bool visited[200][200];
 int dx[] = {-2, -2, 0, 0, 2, 2};
 int dy[] = {-1, 1, -2, 2, -1, 1};
 int n, r1, c1, r2, c2;
-queue<pair<int, int>> qp;
+queue<pii> qp;
 
 void bfs(int x, int y){
     visited[x][y] = true;
     qp.push({x,y});
     while(!qp.empty()){
-        pair<int, int> p;
+        pii p;
         p = qp.front();
         qp.pop();
         for(int i=0; i<6; i++){
