@@ -3,6 +3,7 @@
  * https://www.acmicpc.net/problem/2606
 */
 
+// 인접행렬 구현
 #include <iostream>
 
 using namespace std;
@@ -35,5 +36,42 @@ int main(){
     dfs(1);
     cout << cnt;
     
+    return 0;
+}
+
+// 인접 리스트 구현
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+vector<int> v[101];
+bool visited[101];
+int cnt;
+int n, m;
+
+void dfs(int node){
+    visited[node] = true;
+    for(int i=0; i<v[node].size(); i++){
+        if(!visited[v[node][i]]){
+            cnt++;
+            dfs(v[node][i]);
+        }
+    }
+}
+
+int main(){
+    
+    cin >> n >> m;
+    for(int i=0; i<m; i++){
+        int x, y;
+        cin >> x >> y;
+        v[x].push_back(y);
+        v[y].push_back(x);
+    }
+    
+    dfs(1);
+    cout << cnt;
+
     return 0;
 }
