@@ -7,44 +7,47 @@
 #include <vector>
 
 using namespace std;
-vector<int> v[51];
-bool visited[51];
-int n, t, r;
-int answer;
 
-void dfs(int x){ 
-    visited[x] = true; 
-    int cNode = 0;
-    for(int i=0; i<v[x].size(); i++){ 
-        if(!visited[v[x][i]] && v[x][i] != t){
-            cNode++;
-            dfs(v[x][i]);
+vector<int> v[50];
+bool visited[50];
+int n, m, ans;
+
+void dfs(int node){ 
+    visited[node] = true;
+    int cntnode = 0;
+    for(int i=0; i<v[node].size(); i++){ 
+        int next = v[node][i];
+        if(!visited[next] && next != m){
+            cntnode++;
+            dfs(next);
         }
     }
-    if(cNode == 0){
-        answer++; 
+    if(cntnode == 0){
+        ans++;
     }
 }
 
 int main(){
-        
+
     cin >> n;
-    for(int i=0; i<n; i++){ 
-        cin >> t; 
-        if(t != -1){
-            v[t].push_back(i);
+  
+    int root;
+    for(int i=0; i<n; i++){
+        int t;
+        cin >> t;
+        if(t == -1){
+            root = i;
         }else{
-            r = i;
+            v[t].push_back(i);
         }
     }
-
-    cin >> t;
-    if(t == r){
+    cin >> m;
+    if(m == root){
         cout << 0;
         return 0;
     }
-    dfs(r);
-    cout << answer;
-    
+    dfs(root);
+    cout << ans;
+
     return 0;
 }
