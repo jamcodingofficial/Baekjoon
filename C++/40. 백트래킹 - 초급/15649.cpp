@@ -32,6 +32,6 @@ void dfs(int x){
 int main(){
     cin >> n >> m; 
     dfs(0);
-    printf("A");
+    printf("AB");
    return 0;
 }
