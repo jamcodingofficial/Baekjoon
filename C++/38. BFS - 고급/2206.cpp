@@ -1,7 +1,7 @@
 /*
  * Author : JC
  * https://www.acmicpc.net/problem/2206
-*/
+*/1
 
 #include <iostream>
 #include <queue>
