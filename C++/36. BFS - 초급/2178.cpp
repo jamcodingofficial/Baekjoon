@@ -47,6 +47,6 @@ int main(){
     bfs(1, 1);
     
     cout << arr[n][m];
-1
+
     return 0;
 }
