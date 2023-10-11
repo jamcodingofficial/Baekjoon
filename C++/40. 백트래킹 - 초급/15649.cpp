@@ -1,6 +1,6 @@
 /*
  * Author : JC
- * https://www.acmicpc.net/problem/15649 22222
+ * https://www.acmicpc.net/problem/15649
 */
 
 #include <iostream>
