@@ -1,7 +1,7 @@
 /*
  * Author : JC
  * https://www.acmicpc.net/problem/15649
-*/ 111
+*/
 
 #include <iostream>
 
