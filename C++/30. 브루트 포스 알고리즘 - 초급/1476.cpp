@@ -1,6 +1,6 @@
 /*
  * Author : JC
- * https://www.acmicpc.net/problem/1476
+ * https://www.acmicpc.net/problem/17618
 */
 
 #include <iostream>
@@ -8,25 +8,25 @@
 using namespace std;
 
 int main(){
-    int a, b, c;
-    cin >> a >> b >> c;
-    int e = 1, s = 1, m = 1;
-    int cnt = 1;
-    while(e != a || s != b || m != c){
-        e++;
-        s++;
-        m++;
-        if(e >= 16){
-            e = 1;
+    int n;
+    cin >> n;
+    if(n <= 9){
+        cout << n;
+    }else{
+        int ans = 9;
+        for(int i=10; i<=n; i++){ 
+            int tmp = i;
+            int sum = 0;
+            while(tmp){
+                sum += tmp % 10;
+                tmp /= 10;
+            } 
+            if(i % sum == 0){
+                ans++;
+            }
+            
         }
-        if(s >= 29){
-            s = 1;
-        }
-        if(m >= 20){
-            m = 1;
-        }
-        cnt++;
+        cout << ans;
     }
-    cout << cnt;
     return 0;
 }
